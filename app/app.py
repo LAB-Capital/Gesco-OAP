@@ -57,33 +57,10 @@ sidebar = html.Div(
             [
                 dbc.NavLink(
                     [
-                        html.I(className="fa-solid fa-building me-2"), 
-                        html.Span("Inicio")],
-                    href="/",
-                    active="exact",
-                ),
-                dbc.NavLink(
-                    [
-                        html.I(className="fa-solid fa-chart-simple me-2"),
-                        html.Span("Estadísticas"),
-                    ],  
-                    href="/dashboards",
-                    active="exact",
-                ),
-                dbc.NavLink(
-                    [
                         html.I(className="fa-solid fa-magnifying-glass me-2"),
                         html.Span("Explorador"),
                     ],
                     href="/explorador",
-                    active="exact",
-                ),
-                dbc.NavLink(
-                    [
-                        html.I(className="fa-solid fa-wrench me-2"),
-                        html.Span("Herramientas"),
-                    ],
-                    href="/herramientas",
                     active="exact",
                 ),
             ],
