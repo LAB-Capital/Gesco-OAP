@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  dashboard:
+    image: labcapital/apps:stats
+    container_name: visualizador_iip_2023
+    restart: unless-stopped
+    ports:
+      - "4280:1234"
+    networks:
+      - web_nginx
+
+networks:
+  web_nginx:
+    external: true
