@@ -112,7 +112,7 @@ def visualizacion_buenas_practicas(categoria):
     potencial_carousel = buenas_practicas[buenas_practicas['Macrocategoria'] == categoria]['Potencial de Aprendizaje']
     eficiencia_carousel = buenas_practicas[buenas_practicas['Macrocategoria'] == categoria]['Eficacia']
     capacidad_carousel = buenas_practicas[buenas_practicas['Macrocategoria'] == categoria]['Capacidad de Replica']
-    capacidad_carousel = buenas_practicas[buenas_practicas['Macrocategoria'] == categoria]['Proceso']
+    proceso_carousel = buenas_practicas[buenas_practicas['Macrocategoria'] == categoria]['Proceso']
 
     if indices_carousel.empty:
         buens = html.Div([dbc.Alert(
@@ -133,7 +133,7 @@ def visualizacion_buenas_practicas(categoria):
                 pot_car=list(potencial_carousel)[i],
                 efi_car=list(eficiencia_carousel)[i],
                 cap_car=list(capacidad_carousel)[i],
-                pro_car=list(nombres_carousel)[i])
+                pro_car=list(proceso_carousel)[i])
                 
             cards.append(card)
             
@@ -158,7 +158,7 @@ def visualizacion_lecciones_aprendidas(categoria):
     potencial_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['Potencial de Aprendizaje']
     eficiencia_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['Eficacia']
     capacidad_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['Capacidad de Replica']
-    capacidad_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['Proceso']
+    proceso_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['Proceso']
 
     if indices_carousel.empty:
         
@@ -180,7 +180,7 @@ def visualizacion_lecciones_aprendidas(categoria):
                 pot_car=list(potencial_carousel)[i],
                 efi_car=list(eficiencia_carousel)[i],
                 cap_car=list(capacidad_carousel)[i],
-                pro_car=list(nombres_carousel)[i])
+                pro_car=list(proceso_carousel)[i])
                 
             cards.append(card)
 

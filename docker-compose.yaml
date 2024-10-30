@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   dashboard:
-    image: labcapital/apps:stats
-    container_name: visualizador_iip_2023
+    image: labcapital/apps:gesco_oap
+    container_name: Gesco OAP
     restart: unless-stopped
     ports:
       - "4280:1234"
