@@ -5,10 +5,10 @@ services:
     container_name: Gesco OAP
     restart: unless-stopped
     ports:
-      - "4280:1234"
+      - "4289:1234"
     networks:
       - web_nginx
 
 networks:
   web_nginx:
-    external: true
+    external: True
