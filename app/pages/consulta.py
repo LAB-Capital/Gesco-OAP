@@ -141,11 +141,21 @@ def visualizacion_buenas_practicas(categoria):
                 cap_car=list(capacidad_carousel)[i],
                 pro_car=list(proceso_carousel)[i])
                 
-            cards.append(card)
+            cards.append(
+                dbc.Col(
+                    card,
+                    width=12,  # 12 columns (1 card) on mobile
+                    md=6,      # 6 columns (2 cards per row) on medium screens
+                    lg=4,      # 4 columns (3 cards per row) on large screens
+                    className="mb-4"  # Add some bottom margin between cards
+                )
+            )
             
-        buens = html.Div([
-                html.Div(children=cards,style=estilo)
-            ])
+        buens = dbc.Container([
+            dbc.Row(cards)
+        ],
+        fluid=True
+        )
 
     return buens
 
@@ -155,7 +165,6 @@ def visualizacion_buenas_practicas(categoria):
 )
 def visualizacion_lecciones_aprendidas(categoria):
     
-    estilo={'display':'flex','flex-wrap': 'wrap','justify-content':'space-between'}
     indices_carousel=[0]
     
     indices_carousel = lecciones_aprendidas[lecciones_aprendidas['Macrocategoria'] == categoria]['_index']
@@ -188,10 +197,20 @@ def visualizacion_lecciones_aprendidas(categoria):
                 cap_car=list(capacidad_carousel)[i],
                 pro_car=list(proceso_carousel)[i])
                 
-            cards.append(card)
+            cards.append(
+                dbc.Col(
+                    card,
+                    width=12,  # 12 columns (1 card) on mobile
+                    md=6,      # 6 columns (2 cards per row) on medium screens
+                    lg=4,      # 4 columns (3 cards per row) on large screens
+                    className="mb-4"  # Add some bottom margin between cards
+                )
+            )
 
-        lecci = html.Div([
-                html.Div(children=cards,style=estilo)
-            ])
+        lecci = dbc.Container([
+            dbc.Row(cards)
+        ],
+        fluid=True
+        )
 
     return lecci

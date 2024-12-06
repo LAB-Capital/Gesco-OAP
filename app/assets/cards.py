@@ -1,7 +1,16 @@
 import dash_bootstrap_components as dbc
 from dash import html
 
-margenes_tarjetas = {"width": "31%",'padding':'1rem','margin':'1%','background-color':'#f8f9fa'}
+# margenes_tarjetas = {"width": "31%",'padding':'1rem','margin':'1%','background-color':'#f8f9fa'}
+#margenes_tarjetas = {'padding':'1rem', 'background-color':'#f8f9fa'}
+margenes_tarjetas = {
+    "padding": '1rem', 
+    'margin': '1%', 
+    'background-color': '#f8f9fa',
+    "display": "flex",          # Enable flexbox to stretch content
+    "flexDirection": "column",  # Arrange content vertically within the card
+    "height": "100%"            # Allow the card to expand to fill the container's height
+}
 
 def card_oap(**kwargs):
     return dbc.Card(
