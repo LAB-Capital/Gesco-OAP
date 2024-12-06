@@ -15,15 +15,13 @@ server=app.server
 navbar = dbc.Container(
     dbc.Row([
         dbc.Col(
-            html.A(html.H3('Lecciones Aprendidas & Buenas Prácticas VD',style={'color':'white','margin':'0','font-weight':'bold'}), className="navbar-brand", href="/"),
-        # width=4 #Solo se deja si varias columnas 
         ),
     ],
     justify="between",
     ),
 className='content',
 #style={'background-color':'#e95420'},
-fluid=True,
+fluid=False,
 )
 
 sidebar = html.Div(
@@ -41,18 +39,18 @@ sidebar = html.Div(
             [
                 dbc.NavLink(
                     [
-                        html.I(className="fa-solid fa-magnifying-glass"),
-                        html.Span("Instrumento"),
+                        html.I(className="fa-solid fas fa-book-open",style={'margin-right':'1rem'}),
+                        html.Span("Introducción"),
                     ],
-                    href="/",
+                    href="/introduccion",
                     active="exact",
                 ),
                 dbc.NavLink(
                     [
-                        html.I(className="fa-solid fa-magnifying-glass"),
-                        html.Span("Explorador"),
+                        html.I(className="fa-solid fas fa-compass",style={'margin-right':'1rem'}),
+                        html.Span("Consulta"),
                     ],
-                    href="/explorador",
+                    href="/consulta",
                     active="exact",
                 ),
             ],

@@ -3,7 +3,7 @@ from dash import html, Input, Output, dcc, register_page, callback
 
 from assets.cards import card_oap
 from assets.commons import lecc,buen
-register_page(__name__, path='/explorador')
+register_page(__name__, path='/consulta')
 
 lecciones_aprendidas=lecc
 buenas_practicas=buen
@@ -22,60 +22,66 @@ selector_categoria = dcc.Dropdown(
 # LAYOUT    
 ###############################################################################################################################################################################################################
 
-layout = html.Div([
+layout = dbc.Container([
 
     dbc.Row([        
         dcc.Store(id='data_categoria',data=[],storage_type='memory'),
 
         dbc.Col([
-            html.H1(children=['Titulo de sección'],style={'font-weight':'bold'}),
-            html.Br(),
+            html.H1('Sistema de consulta',style={'font-weight':'bold'}),
             ],
-            width=9,
+            width=7,
         ),
 
         dbc.Col([
             selector_categoria
             ],
-            width=3,
+            width=5,
         )
-        ],
-        justify="between",
-        
-    ),
-
-    dbc.Row([
-        dbc.Col([
-            dbc.Row([
-                dbc.Col([
-                    html.Div([
-                        html.H3('Buenas Prácticas'),
-                        html.Div(id='buenas',children='',),
-                    ]),
-                ]),
-            ]),
-        ],
-        ),
     ],
     justify="between",
     ),
     
-        dbc.Row([
-            dbc.Col([
-                dbc.Row([
-                    dbc.Col([
-                        html.Div([
-                            html.H3('Lecciones Aprendidas'),
-                            html.Div(id='lecciones',children='',),
-                        ]),
-                    ]),
-                ]),
-            ],
+    dbc.Row([
+        dbc.Col([
+            html.P(
+                '''El Explorador de Buenas Prácticas y Lecciones Aprendidas es una herramienta interactiva diseñada para facilitar la consulta y análisis de iniciativas destacadas en diferentes áreas de gestión e innovación pública. A través de su interfaz intuitiva, los usuarios pueden navegar por un repositorio organizado de prácticas y lecciones aprendidas, clasificadas en diversas macro categorías.''',
+                style={'textAlign': 'justify'}
+            ),
+            html.P(
+                '''Para utilizar el explorador, simplemente seleccione el área de interés desde el desplegable ubicado en la parte superior derecha. El sistema filtrará automáticamente las iniciativas relacionadas con el área seleccionada, permitiendo acceder de manera rápida y eficiente a información relevante para el fortalecimiento de estrategias institucionales.''',
+                style={'textAlign': 'justify'}
             ),
         ],
-        justify="between",
         ),
+    ],
+    justify="between",
+    style={'padding-top':'2rem'}
+    ),
+
+    dbc.Row([
+        dbc.Col([
+            html.H3('Buenas Prácticas',style={'font-weight':'bold'}),
+            html.Div(id='buenas',children='',),
+        ],
+        ),
+    ],
+    justify="between",
+    style={'padding-top':'2rem'}
+    ),
+    
+    dbc.Row([
+        dbc.Col([
+            html.H3('Lecciones Aprendidas',style={'font-weight':'bold'}),
+            html.Div(id='lecciones',children='',),
+        ],
+        ),
+    ],
+    justify="between",
+    style={'padding-top':'4rem'}
+    ),
 ],
+fluid=True
 )
 
 ###############################################################################################################################################################################################################

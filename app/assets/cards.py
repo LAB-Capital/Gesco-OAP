@@ -8,38 +8,44 @@ def card_oap(**kwargs):
         [
             dbc.CardBody(
                 [
-                    html.H5(children='Índice', className="card-title me-2",style={'font-weight':'bold'}),
-                    html.P(kwargs['ind_car'], className="card-title"),
-
-                    html.H5(children='Nombre', className="card-title me-2",style={'font-weight':'bold'}),
-                    html.P(kwargs['nom_car'], className="card-title"),
-
-                    dbc.Table(
-                                        children=[
-                                            html.Thead([
-                                                html.Tr([
-                                                    html.Th("Creatividad"),
-                                                    html.Th("Potencial de Aprendizaje"),
-                                                    html.Th("Eficacia"),
-                                                    html.Th("Capacidad de Replica"),
-                                                ])
-                                            ]                            
-                                            ),
-                                            html.Tbody([
-                                                html.Tr([
-                                                    html.Td(kwargs['cre_car']),
-                                                    html.Td(kwargs['pot_car']),
-                                                    html.Td(kwargs['efi_car']),
-                                                    html.Td(kwargs['cap_car']),
-                                                ])
-                                            ]
-                                            )
-                                            ],
-                                        bordered=True,
-                                        hover=True,
-                                        responsive=True,
-                                        striped=True,
-                                        ),
+                    html.H5("Nombre", className="card-title me-2",style={'font-weight':'bold'}),
+                    html.P(kwargs['nom_car'], className="card-title"), # ,style={'font-weight':'bold'}
+                    html.H5("Puntaje", className="card-title me-2",style={'font-weight':'bold'}),
+                    html.Div([
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Progress(label="Creatividad", value=kwargs['cre_car'], max=5, color="success"),
+                                html.Br()
+                            ]
+                            )
+                        ]
+                        ),
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Progress(label="Potencial de Aprendizaje", value=kwargs['pot_car'], max=5, color="warning"),
+                                html.Br()
+                            ]
+                            )
+                        ]
+                        ),
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Progress(label="Eficacia", value=kwargs['efi_car'], max=5, color="danger"),
+                                html.Br()
+                            ]
+                            )
+                        ]
+                        ),
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Progress(label="Capacidad de Replica", value=kwargs['cap_car'], max=5, color="info"),
+                                html.Br()
+                            ]
+                            )
+                        ]
+                        ),
+                    ],
+                    ),
                     
                     html.H5(children='Proceso', className="card-title me-2",style={'font-weight':'bold'}),
                     html.P(children=kwargs['pro_car'], className="card-text"),
