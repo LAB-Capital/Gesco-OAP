@@ -1,7 +1,7 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc, register_page
 
-register_page(__name__, path='/introduccion')
+register_page(__name__, path='/')
 
 par_spacer='1rem'
 progress_thickness='.8rem'

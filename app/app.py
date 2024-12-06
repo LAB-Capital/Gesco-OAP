@@ -42,7 +42,7 @@ sidebar = html.Div(
                         html.I(className="fa-solid fas fa-book-open",style={'margin-right':'1rem'}),
                         html.Span("Introducción"),
                     ],
-                    href="/introduccion",
+                    href="/",
                     active="exact",
                 ),
                 dbc.NavLink(

@@ -1,11 +1,11 @@
 services:
   dashboard:
-    image: labcapital/apps:gesco_oap
-    #build: .
+    #image: labcapital/apps:gesco_oap
+    build: .
     container_name: Gesco_VDOAP
     restart: unless-stopped
     ports:
-      - "4280:1234"
+      - "4289:1234"
     networks:
       - web_nginx
 
