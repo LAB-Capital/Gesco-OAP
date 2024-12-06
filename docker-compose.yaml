@@ -1,11 +1,9 @@
 services:
   dashboard:
-    #image: labcapital/apps:stats_mantine
-    build: .
+    image: labcapital/apps:gesco_oap
+    #build: .
     container_name: Gesco_VDOAP
     restart: unless-stopped
-#    env_file:
-#      - .env # Se espera que el .env tenga GITHUB_TOKEN=token
     ports:
       - "4280:1234"
     networks:
